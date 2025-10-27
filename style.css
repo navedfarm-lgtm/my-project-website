@@ -1,0 +1,167 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+}
+
+/* Main Header */
+.main-header {
+    width: 100%;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Logo */
+.main-header .logo {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    padding: 5px 0;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.12);
+}
+
+.logo img {
+    width: 180px;
+}
+
+/* Tagline */
+.tagline-box {
+    background: #ffffff;
+    color: #0b1d66;
+    font-size: 16px;
+    font-weight: 650;
+    padding: 8px 0;
+    letter-spacing: 2px;
+    box-shadow: 0px 6px 14px rgba(30, 100, 200, 0.28);
+    border-bottom: 2px solid #4b6cb7;
+}
+
+/* Desktop Menu */
+.menu {
+    width: 100%;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid #ffffff;
+    transform-origin: top;
+    transition: transform 0.35s ease, max-height 0.35s ease;
+}
+
+.menu ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 18px;
+}
+
+.menu ul li a {
+    color: #e8ecff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 12px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover effect for all menu links */
+.menu ul li a:hover {
+    color: #fff;
+    border-bottom: 2px solid #8ad3ff;
+    text-shadow: 0 0 6px #8ad3ff;
+}
+
+/* Active link (page you are currently on) */
+.menu ul li .active {
+    color: #fff;
+}
+
+/* Home should NOT stay underlined when page is active */
+.menu ul li a.active {
+    border-bottom: none !important;
+    text-shadow: none !important;
+}
+
+/* Home content */
+.home-content {
+    margin-top: 50px;
+    text-align: center;
+    color: #0b1d66;
+}
+
+.home-content h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* About content */
+.about-content {
+    margin: 80px auto;
+    width: 80%;
+    text-align: center;
+    color: #0b1d66;
+    max-width: 750px;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* MOBILE VIEW */
+.mobile-buttons {
+    display: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.mob-btn {
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    text-decoration: none;
+    width: 100%;
+    margin: 5px 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .menu {
+        padding: 0;
+        max-height: 0;
+        transform: scaleY(0);
+        overflow: hidden;
+    }
+
+    .mobile-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu ul li {
+        display: block;
+        margin: 12px 0;
+    }
+
+    #menu-toggle:checked ~ .menu {
+        max-height: 600px;
+        transform: scaleY(1);
+        padding: 15px 0;
+        border-top: 2px solid #ffffff;
+    }
+}
